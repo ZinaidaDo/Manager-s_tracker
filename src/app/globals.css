@@ -1,0 +1,292 @@
+﻿@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme inline {
+  --font-sans: var(--font-inter);
+  --font-heading: var(--font-montserrat);
+  --color-fjord: #0b2e4f;
+  --color-teal: #00a9a5;
+  --color-glacier: #4cc9f0;
+  --color-sun: #ff7a59;
+  --color-graphite: #1b2735;
+  --color-snow: #f4f7fa;
+}
+
+:root {
+  --nf-page: #f4f7fa;
+  --nf-surface: #ffffff;
+  --nf-surface-alt: #e7f0f5;
+  --nf-border: #c9d8e4;
+  --nf-text: #0b2e4f;
+  --nf-text-muted: #41576b;
+  --nf-primary: #0b2e4f;
+  --nf-primary-hover: #00a9a5;
+  --nf-accent: #00a9a5;
+  --nf-accent-soft: #ddf6f5;
+  --nf-info: #4cc9f0;
+  --nf-info-text: #0b5c8a;
+  --nf-info-soft: #dcf3fc;
+  --nf-info-dark: #a9e7fb;
+  --nf-info-soft-dark: rgba(76, 201, 240, 0.16);
+  --nf-warning: #ff7a59;
+  --nf-warning-text: #9e3c20;
+  --nf-warning-soft: #fff0eb;
+  --nf-warning-soft-dark: rgba(255, 122, 89, 0.16);
+  --nf-warning-dark: #ffb39f;
+  --nf-danger: #c4462f;
+  --nf-danger-text: #9e2f24;
+  --nf-danger-soft: #fce9e5;
+  --nf-danger-border: #e8a99e;
+  --nf-danger-dark: #ff9e85;
+  --nf-danger-soft-dark: rgba(255, 122, 89, 0.14);
+  --nf-success-text: #007f7c;
+  --nf-on-primary: #f4f7fa;
+  color-scheme: light;
+}
+
+.dark {
+  --nf-page: #071f35;
+  --nf-surface: #0b2e4f;
+  --nf-surface-alt: #123e61;
+  --nf-border: #1d4b72;
+  --nf-text: #f4f7fa;
+  --nf-text-muted: #b6c8d6;
+  --nf-primary: #00a9a5;
+  --nf-primary-hover: #4cc9f0;
+  --nf-accent: #4cc9f0;
+  --nf-accent-soft: rgba(0, 169, 165, 0.16);
+  --nf-info-text: #a9e7fb;
+  --nf-info-soft: rgba(76, 201, 240, 0.16);
+  --nf-warning-text: #ffb39f;
+  --nf-warning-soft: rgba(255, 122, 89, 0.16);
+  --nf-danger: #ff7a59;
+  --nf-danger-text: #ff9e85;
+  --nf-danger-soft: rgba(255, 122, 89, 0.14);
+  --nf-danger-border: rgba(255, 122, 89, 0.45);
+  --nf-success-text: #4cc9f0;
+  --nf-on-primary: #071f35;
+  color-scheme: dark;
+}
+
+body {
+  background-color: var(--nf-page);
+  color: var(--nf-text);
+  font-family: var(--font-inter), Arial, Helvetica, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-montserrat), var(--font-inter), Arial, sans-serif;
+}
+
+:where(a, button, input, select, textarea):focus-visible {
+  outline: 2px solid var(--nf-accent);
+  outline-offset: 2px;
+}
+
+::selection {
+  background-color: var(--nf-accent-soft);
+  color: var(--nf-text);
+}
+
+.nf-hero {
+  background-image: linear-gradient(135deg, rgba(11, 46, 79, 0.92), rgba(11, 46, 79, 0.72)), url("/brand/coverhero.png");
+  background-position: center;
+  background-size: cover;
+}
+
+.nf-status-pill {
+  background-color: var(--nf-accent-soft);
+  border: 1px solid color-mix(in srgb, var(--nf-accent) 35%, transparent);
+  color: var(--nf-text);
+}
+
+header {
+  border-top: 3px solid var(--nf-accent);
+}
+
+.bg-slate-50,
+.bg-white {
+  background-color: var(--nf-surface);
+}
+
+.bg-slate-50\/40 {
+  background-color: color-mix(in srgb, var(--nf-surface) 40%, transparent);
+}
+
+.bg-slate-50\/70 {
+  background-color: color-mix(in srgb, var(--nf-surface) 70%, transparent);
+}
+
+.bg-white\/60 {
+  background-color: color-mix(in srgb, var(--nf-surface) 60%, transparent);
+}
+
+.bg-slate-100 {
+  background-color: var(--nf-surface-alt);
+}
+
+.bg-slate-100\/70 {
+  background-color: color-mix(in srgb, var(--nf-surface-alt) 70%, transparent);
+}
+
+.bg-slate-900 {
+  background-color: var(--nf-primary);
+}
+
+.border-slate-100,
+.border-slate-200,
+.border-slate-300 {
+  border-color: var(--nf-border);
+}
+
+.border-slate-900 {
+  border-color: var(--nf-accent);
+}
+
+.divide-slate-100 > :not([hidden]) ~ :not([hidden]) {
+  border-color: var(--nf-border);
+}
+
+.text-slate-900,
+.text-slate-800,
+.text-slate-700 {
+  color: var(--nf-text);
+}
+
+.text-slate-600,
+.text-slate-500 {
+  color: var(--nf-text-muted);
+}
+
+.text-white {
+  color: var(--nf-on-primary);
+}
+
+.hover\:bg-slate-50:hover {
+  background-color: var(--nf-accent-soft);
+}
+
+.hover\:bg-slate-800:hover {
+  background-color: var(--nf-primary-hover);
+  color: var(--nf-page);
+}
+
+.hover\:border-slate-300:hover {
+  border-color: var(--nf-accent);
+}
+
+.hover\:text-slate-900:hover {
+  color: var(--nf-primary-hover);
+}
+
+.bg-red-50\/40 {
+  background-color: color-mix(in srgb, var(--nf-danger-soft) 40%, transparent);
+}
+
+.bg-red-100,
+.bg-amber-50 {
+  background-color: var(--nf-danger-soft);
+}
+
+.bg-red-600 {
+  background-color: var(--nf-danger);
+}
+
+.border-red-300 {
+  border-color: var(--nf-danger-border);
+}
+
+.text-red-600,
+.text-red-700,
+.text-red-800,
+.text-amber-800 {
+  color: var(--nf-danger-text);
+}
+
+.bg-blue-100 {
+  background-color: var(--nf-info-soft);
+}
+
+.text-blue-700,
+.text-blue-800 {
+  color: var(--nf-info-text);
+}
+
+.text-green-700 {
+  color: var(--nf-success-text);
+}
+
+.dark .dark\:bg-slate-950,
+.dark .dark\:bg-slate-900 {
+  background-color: var(--nf-surface);
+}
+
+.dark .dark\:bg-slate-800,
+.dark .dark\:bg-slate-900\/40,
+.dark .dark\:bg-slate-800\/40 {
+  background-color: var(--nf-surface-alt);
+}
+
+.dark .dark\:bg-slate-800\/30,
+.dark .dark\:bg-slate-800\/50 {
+  background-color: color-mix(in srgb, var(--nf-surface-alt) 50%, transparent);
+}
+
+.dark .dark\:border-slate-600,
+.dark .dark\:border-slate-700,
+.dark .dark\:border-slate-800 {
+  border-color: var(--nf-border);
+}
+
+.dark .dark\:divide-slate-800 > :not([hidden]) ~ :not([hidden]) {
+  border-color: var(--nf-border);
+}
+
+.dark .dark\:text-slate-100,
+.dark .dark\:text-slate-200,
+.dark .dark\:text-slate-300,
+.dark .dark\:text-white {
+  color: var(--nf-text);
+}
+
+.dark .dark\:text-slate-400 {
+  color: var(--nf-text-muted);
+}
+
+.dark .dark\:hover\:bg-slate-800:hover {
+  background-color: var(--nf-accent-soft);
+}
+
+.dark .dark\:hover\:text-white:hover {
+  color: var(--nf-text);
+}
+
+.dark .dark\:bg-red-950\/20,
+.dark .dark\:bg-red-900\/40,
+.dark .dark\:bg-amber-900\/30 {
+  background-color: var(--nf-warning-soft-dark);
+}
+
+.dark .dark\:border-red-800 {
+  border-color: var(--nf-danger-border);
+}
+
+.dark .dark\:text-red-300,
+.dark .dark\:text-red-400,
+.dark .dark\:text-amber-300 {
+  color: var(--nf-danger-dark);
+}
+
+.dark .dark\:bg-blue-900\/40 {
+  background-color: var(--nf-info-soft-dark);
+}
+
+.dark .dark\:text-blue-200,
+.dark .dark\:text-blue-300 {
+  color: var(--nf-info-dark);
+}
